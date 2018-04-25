@@ -22,3 +22,5 @@ Stack.prototype.size = function() {
   this.storage.size = Object.keys(this.storage).length;
   return this.storage.size;
 };
+
+var someInstance = new Stack();

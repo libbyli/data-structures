@@ -22,6 +22,6 @@ Queue.prototype.size = function() {
   return this.storage.size;
 };
 
-
+var someInstance = new Queue();
 
 
