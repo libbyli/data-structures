@@ -7,7 +7,7 @@ var LinkedList = function() {
     var newNode = Node(value);
     if (list.head === null) {
       list.head = newNode;
-    };
+    }
 
     if (list.tail !== null) {
       list.tail.next = newNode;
@@ -37,7 +37,7 @@ var LinkedList = function() {
           return findTarget(node.next);
         }
       }
-    }
+    };
     return findTarget(list.head);
   };
 
@@ -55,4 +55,7 @@ var Node = function(value) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+   list.addToTail is O(1), constant.
+   list.removeHead is O(1), constant.
+   list.contains is O(n), linear.
  */
