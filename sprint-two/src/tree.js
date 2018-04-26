@@ -22,16 +22,21 @@ treeMethods.contains = function(target) {
     if (node.value === target) {
       return true;
     } else {
-      if (node.children.length === 0) {
-        return false;
+      for(var i = 0; i < node.children.length; i++){
+        if(checkNode(node.children[i])){
+          return true;
+        }
       }
-      // node.children.forEach(function)
+      return false;
     }
   };
+  return checkNode(this);
 };
 
 
 
 /*
  * Complexity: What is the time complexity of the above functions?
+   treeMethods.addChild is O(1), constant.
+   treeMethods.contains is O(n), linear.
  */
