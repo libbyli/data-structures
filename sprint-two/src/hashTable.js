@@ -39,7 +39,7 @@ HashTable.prototype.remove = function(k) {
   var index = getIndexBelowMaxForKey(k, this._limit);
   var bucket = this._storage.get(index);
   var bucketIndex;
-  for (var i = 0; i < bucket.length; i++){
+  for (var i = 0; i < bucket.length; i++) {
     if (bucket[i][0] === k) {
       bucketIndex = i;
     }
