@@ -3,9 +3,9 @@
 var HashTable = function() {
   this._limit = 8;
   this._storage = LimitedArray(this._limit);
-  this._storage.each(function(bucket, index, storage) {
-    this._storage.set(index, []);
-  });
+  for (var i = 0; i < this._limit; i++) {
+    this._storage.set(i, []);
+  }
 };
 
 HashTable.prototype.insert = function(k, v) {
@@ -37,12 +37,22 @@ HashTable.prototype.retrieve = function(k) {
 
 HashTable.prototype.remove = function(k) {
   var index = getIndexBelowMaxForKey(k, this._limit);
+  var bucket = this._storage.get(index);
+  var bucketIndex;
+  for (var i = 0; i < bucket.length; i++){
+    if (bucket[i][0] === k) {
+      bucketIndex = i;
+    }
+  }
+  bucket.splice(bucketIndex, 1);
+  this._storage.set(index, bucket);
 };
 
 
 
 /*
  * Complexity: What is the time complexity of the above functions?
+   All functions are O(n), linear.
  */
 
 
