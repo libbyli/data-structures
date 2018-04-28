@@ -80,13 +80,13 @@ bstMethods.closestValue = function(target) {
         return result;
       }
     }
-  }
+  };
   if (target < this.value) {
     return compareNumbers(target, this.left);
   } else if (target > this.value) {
     return compareNumbers(target, this.right);
   }
-}
+};
 
 /*
  * Complexity: What is the time complexity of the above functions?
