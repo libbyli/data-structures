@@ -35,6 +35,11 @@ describe('hashTable', function() {
     expect(hashTable.retrieve('Steven')).to.equal(undefined);
   });
 
+  it('remove function should do nothing if it does not find key value', function() {
+    hashTable.remove('Steven');
+    expect(hashTable.retrieve('Steven')).to.equal(undefined);
+  });
+
   it('should handle hash function collisions', function() {
     var v1 = 'val1';
     var v2 = 'val2';

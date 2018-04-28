@@ -29,7 +29,9 @@ describe('tree', function() {
   it('should be able to add children to a tree\'s child', function() {
     tree.addChild(5);
     tree.children[0].addChild(6);
+    tree.children[0].children[0].addChild(7);
     expect(tree.children[0].children[0].value).to.equal(6);
+    expect(tree.children[0].children[0].children[0].value).to.equal(7);
   });
 
   it('should correctly detect nested children', function() {

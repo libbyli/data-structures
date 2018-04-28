@@ -20,6 +20,12 @@ describe('graph', function() {
     expect(graph.contains(1)).to.equal(true);
   });
 
+  it('should not create edges on newly added nodes', function() {
+    graph.addNode(2);
+    graph.addNode(3);
+    expect(graph.hasEdge(2, 3)).to.equal(false);
+  });
+
   it('should remove nodes that were inserted', function() {
     graph.addNode(2);
     expect(graph.contains(2)).to.equal(true);

@@ -44,5 +44,5 @@ describe('binarySearchTree', function() {
     binarySearchTree.insert(13);
     binarySearchTree.insert(20);
     expect(binarySearchTree.closestValue(12)).to.equal(13);
-  })
+  });
 });
